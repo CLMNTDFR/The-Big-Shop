@@ -22,6 +22,7 @@
 }
 
 .tbs-record-item-name {
+    padding-top: 15px;
     font-weight: 500;
     font-size: 1em; /* Taille de police par défaut */
 }
@@ -35,9 +36,9 @@
     position: absolute;
     top: -10px; /* Ajuster cette valeur pour dépasser légèrement du bord */
     right: -10px; /* Ajuster cette valeur pour dépasser légèrement du bord */
-    background-color: #ffffff; /* Fond noir */
-    color: #000000; /* Texte blanc */
-    border-radius: 50%; /* Pour créer un cercle */
+    background-color: #1c1c1c; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
+    border-radius: 20%; /* Pour créer un cercle */
     padding: 8px; /* Ajuster le padding pour contrôler la taille du cercle */
     font-weight: 500;
     font-size: 1.2em;

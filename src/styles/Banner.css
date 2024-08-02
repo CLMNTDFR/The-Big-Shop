@@ -8,7 +8,7 @@
     font-size: 0.8em;
     color: white;
     text-align: left;
-    padding: 20px 100px; /* Retirer le padding en haut */
+    padding: 20px 100px; /* Ajuster le padding si nécessaire */
     border-bottom: solid 3px black;
     background-color: #000000;
     letter-spacing: 3px;
@@ -17,32 +17,25 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
-.tbs-title {
-    margin: 0;
-}
-
-.tbs-cart-image {
-    height: 20px; /* Réduire la taille de l'image */
+.tbs-logo {
+    height: auto;
+    max-height: 30px; /* Ajustez cette valeur en fonction de la hauteur souhaitée pour l'image */
+    display: block;
 }
 
 @media (max-width: 768px) {
-.tbs-banner {
-    font-family: "Germania One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1em;
-    color: white;
-    text-align: center;
-    padding: 10px 0; /* Retirer le padding en haut */
-    border-bottom: solid 3px black;
-    background-color: #000000;
-    letter-spacing: 3px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-}
+    .tbs-banner {
+        font-size: 1em;
+        text-align: center;
+        padding: 10px 0; /* Ajuster le padding si nécessaire */
+        justify-content: center; /* Centrer horizontalement */
+    }
+
+    .tbs-logo {
+        max-height: 37px; /* Ajustez cette valeur pour les appareils mobiles si nécessaire */
+    }
 }

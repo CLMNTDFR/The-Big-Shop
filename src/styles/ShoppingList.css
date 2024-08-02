@@ -2,6 +2,8 @@
     max-width: 1200px;
     margin: 0 auto; /* Centrer le conteneur principal */
     padding: 32px; /* Ajouter du padding autour du contenu */
+    background-color: #1c1c1c;
+    color: white;
 }
 
 .tbs-record-list {
@@ -15,33 +17,33 @@
 }
 
 .tbs-record-list > div {
-    flex: 0 0 calc(33.33% - 20px);
-    margin: 10px;
+    flex: 1 1 300px; /* Utiliser une base de 300px pour la largeur des éléments */
+    margin: 10px; /* Espacement entre les éléments */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Ajustement pour les petits écrans */
 @media (max-width: 768px) {
     .tbs-record-list > div {
-        flex: 0 0 calc(100% - 20px);
+        flex: 1 1 calc(100% - 20px); /* Prendre toute la largeur disponible sur petits écrans */
     }
 }
 
 .tbs-add-button {
-    color: #000000;
-    background-color: #ededed; /* Couleur gris-clair */
-    border: none;
+    color: #ffffff;
+    background-color: #1c1c1c; /* Couleur gris-clair */
+    border: 1px solid white; /* Bord blanc très fin */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 8px 16px;
     margin-top: 8px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50px; /* Bord très rond */
     font-size: 1em;
     transition: background-color 0.3s, box-shadow 0.3s; /* Ajout de la transition pour box-shadow */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.539);
 }
 
 .tbs-add-button img.tbs-plus-icon {
@@ -51,5 +53,5 @@
 }
 
 .tbs-add-button:hover {
-    background-color: #c4c4c4; /* Couleur gris-foncé au survol */
+    background-color: #444444; /* Couleur gris-foncé au survol */
 }

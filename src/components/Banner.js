@@ -1,10 +1,10 @@
 import '../styles/Banner.css'
+import logo from '../assets/Deathify.svg' // Import de l'image SVG
 
 function Banner() {
-	const title = 'The Big Shop'
 	return (
 		<div className='tbs-banner'>
-			<h1 className='tbs-title'>{title}</h1>
+			<img src={logo} alt="Deathify Logo" className='tbs-logo' />
 		</div>
 	)
 }

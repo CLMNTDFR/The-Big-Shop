@@ -1,3 +1,4 @@
+// App.js
 import { useState, useEffect } from 'react'
 import Banner from './Banner'
 import Footer from './Footer'
@@ -8,9 +9,9 @@ import '../styles/Layout.css'
 function App() {
   const savedCart = localStorage.getItem('cart')
   const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
-	useEffect(() => {
-		localStorage.setItem('cart', JSON.stringify(cart))
-	}, [cart])
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
 
   const showAlert = (name) => {
     // Vous pouvez ajouter ici la logique pour afficher l'alerte si nécessaire

@@ -63,9 +63,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 80%;
     padding: 8px 16px;
-    border-bottom: 1px solid #ccc; /* Ajouter une bordure en bas */
+    border-bottom: none; /* Supprimer la bordure en bas */
+    /* Si vous souhaitez une bordure mais sans ligne blanche, ajustez la couleur et l'épaisseur ici */
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.tbs-cart-item:last-child {
+    border-bottom: none; /* Assurez-vous que le dernier élément n'a pas de bordure en bas */
 }
 
 .tbs-cart-item > span {
@@ -73,13 +79,13 @@
     margin-left: 8px; /* Ajouter une petite marge à gauche pour le texte */
 }
 
-.tbs-clear-button {
-    color: #000000;
-    background-color: #ededed; /* Couleur gris-clair */
+.tbs-clear-button, .tbs-buy-button {
+    color: #ffffff;
+    background-color: #000000; /* Fond noir */
     border: none;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     padding: 8px 16px;
     margin-top: 8px;
     cursor: pointer;
@@ -87,6 +93,22 @@
     font-size: 1em;
     transition: background-color 0.3s, box-shadow 0.3s; /* Ajout de la transition pour box-shadow */
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.539);
+    width: 100%; /* La même largeur pour les deux boutons */
+}
+
+.tbs-clear-button img.tbs-clear-icon, .tbs-buy-button img.tbs-buy-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+}
+
+.tbs-clear-button:hover, .tbs-buy-button:hover {
+    background-color: #333333; /* Couleur gris foncé au survol */
+}
+
+.tbs-buy-button {
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
 }
 
 .tbs-delete-button {
@@ -100,19 +122,15 @@
 }
 
 .tbs-delete-button img.tbs-delete-icon {
-    width: 16px; /* Taille plus petite pour l'icône de suppression */
-    height: 16px; /* Taille plus petite pour l'icône de suppression */
-    margin-right: 10px; /* Pas de marge à droite */
+    width: 10px; /* Taille initiale pour l'icône de suppression */
+    height: 10px; /* Taille initiale pour l'icône de suppression */
+    margin-right: 10px; /* Marge à droite */
+    transition: width 0.3s, height 0.3s; /* Transition pour la taille */
 }
 
-.tbs-clear-button img.tbs-clear-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-}
-
-.tbs-clear-button:hover {
-    background-color: #c4c4c4; /* Couleur gris-foncé au survol */
+.tbs-delete-button img.tbs-delete-icon:hover {
+    width: 12px; /* Taille lors du survol pour l'icône de suppression */
+    height: 12px; /* Taille lors du survol pour l'icône de suppression */
 }
 
 @media (max-width: 768px) {
@@ -127,7 +145,7 @@
     }
 
     .tbs-cart-open {
-        height: 500px; /* Hauteur pour le menu ouvert sur mobile */
+        height: 450px; /* Hauteur pour le menu ouvert sur mobile */
     }
 
     .tbs-cart-closed {

@@ -1,3 +1,4 @@
+// ShoppingList.js
 import { useState } from 'react';
 import { recordList } from "../datas/recordList";
 import RecordItem from './RecordItem';
@@ -6,9 +7,13 @@ import '../styles/ShoppingList.css';
 import plusIcon from '../assets/tbs-plus.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import MusicPlayer from './MusicPlayer';
 
-function ShoppingList({ cart, updateCart }) {
+function ShoppingList({ cart, updateCart, showAlert }) {
     const [activeCategory, setActiveCategory] = useState('');
+    const [selectedAlbum, setSelectedAlbum] = useState(null);
+    const [isPlayerVisible, setPlayerVisible] = useState(false);
+
     const sortedRecordList = recordList.sort((a, b) => b.year - a.year);
 
     const categories = sortedRecordList.reduce(
@@ -16,6 +21,10 @@ function ShoppingList({ cart, updateCart }) {
             acc.includes(record.category) ? acc : acc.concat(record.category),
         []
     );
+
+    const closePlayer = () => {
+        setPlayerVisible(false);
+    };
 
     function addToCart(name, price) {
         const currentRecordSaved = cart.find((record) => record.name === name);
@@ -27,6 +36,12 @@ function ShoppingList({ cart, updateCart }) {
         }
     }
 
+    function openPlayer(albumId) {
+        const album = recordList.find(record => record.id === albumId);
+        setSelectedAlbum(album);
+        setPlayerVisible(true);
+    }
+
     return (
         <div className='tbs-shopping-list'>
             <Categories
@@ -35,7 +50,7 @@ function ShoppingList({ cart, updateCart }) {
                 activeCategory={activeCategory}
             />
             <ul className='tbs-record-list'>
-                {sortedRecordList.map(({ id, cover, name, year, price, category }) => (
+                {sortedRecordList.map(({ id, cover, name, year, price, category, tracks }) => (
                     !activeCategory || activeCategory === category ? (
                         <div key={id}>
                             <RecordItem
@@ -43,7 +58,8 @@ function ShoppingList({ cart, updateCart }) {
                                 cover={cover}
                                 name={name}
                                 year={year}
-                                price={price} // Passer le prix comme prop
+                                price={price}
+                                onClick={() => openPlayer(id)} // Passer l'ID de l'album pour ouvrir le lecteur
                             />
                             <button className='tbs-add-button' onClick={() => addToCart(name, price)}>
                                 <img src={plusIcon} alt="plus icon" className='tbs-plus-icon' />
@@ -53,6 +69,13 @@ function ShoppingList({ cart, updateCart }) {
                     ) : null
                 ))}
             </ul>
+            {isPlayerVisible && selectedAlbum && (
+                <MusicPlayer
+                    tracks={selectedAlbum.tracks || []}
+                    cover={selectedAlbum.cover || ''}
+                    onClose={closePlayer}
+                />
+            )}
         </div>
     );
 }

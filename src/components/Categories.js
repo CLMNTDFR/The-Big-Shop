@@ -1,4 +1,7 @@
 import '../styles/Categories.css'
+import epIcon from '../assets/ep.svg'
+import albumIcon from '../assets/album.svg'
+import resetIcon from '../assets/reset.svg'
 
 function Categories({ setActiveCategory, categories, activeCategory }) {
     return (
@@ -9,10 +12,17 @@ function Categories({ setActiveCategory, categories, activeCategory }) {
                     className={`tbs-category-button ${activeCategory === cat ? 'active' : ''}`}
                     onClick={() => setActiveCategory(cat)}
                 >
+                    <img
+                        src={cat === 'EP' ? epIcon : albumIcon}
+                        alt={`${cat} icon`}
+                        className='tbs-category-icon'
+                    />
                     {cat}
                 </button>
             ))}
-            <button onClick={() => setActiveCategory('')} className='tbs-category-button'>Reset</button>
+            <button onClick={() => setActiveCategory('')} className='tbs-reset-button'>
+                <img src={resetIcon} alt="Reset icon" className='tbs-category-icon' />
+            </button>
         </div>
     )
 }
