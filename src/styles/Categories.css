@@ -1,0 +1,43 @@
+.tbs-categories {
+    text-align: center;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tbs-category-button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.tbs-category-button:hover {
+    color: #31b472;
+}
+
+.tbs-category-button.active {
+    color: #31b472;
+}
+
+.tbs-categories button {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.tbs-categories button:hover {
+    color: #31b472;
+}
+
+@media (max-width: 768px) {
+	.tbs-categories {
+		padding-top: 30px;
+	}
+}

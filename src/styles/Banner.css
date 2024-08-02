@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaini&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Rock+Salt&display=swap');
+
+.tbs-banner {
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8em;
+    color: white;
+    text-align: left;
+    padding: 20px 100px; /* Retirer le padding en haut */
+    border-bottom: solid 3px black;
+    background-color: #000000;
+    letter-spacing: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tbs-title {
+    margin: 0;
+}
+
+.tbs-cart-image {
+    height: 20px; /* Réduire la taille de l'image */
+}
+
+@media (max-width: 768px) {
+.tbs-banner {
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    padding: 10px 0; /* Retirer le padding en haut */
+    border-bottom: solid 3px black;
+    background-color: #000000;
+    letter-spacing: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+}

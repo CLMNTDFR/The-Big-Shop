@@ -1,0 +1,55 @@
+.tbs-shopping-list {
+    max-width: 1200px;
+    margin: 0 auto; /* Centrer le conteneur principal */
+    padding: 32px; /* Ajouter du padding autour du contenu */
+}
+
+.tbs-record-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto; /* Centrer la liste des enregistrements */
+    max-width: 100%; /* Assurer que la liste prend toute la largeur disponible */
+}
+
+.tbs-record-list > div {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .tbs-record-list > div {
+        flex: 0 0 calc(100% - 20px);
+    }
+}
+
+.tbs-add-button {
+    color: #000000;
+    background-color: #ededed; /* Couleur gris-clair */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Ajout de la transition pour box-shadow */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.539);
+}
+
+.tbs-add-button img.tbs-plus-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 8px;
+}
+
+.tbs-add-button:hover {
+    background-color: #c4c4c4; /* Couleur gris-foncé au survol */
+}

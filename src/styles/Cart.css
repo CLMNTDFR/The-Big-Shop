@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaini&display=swap");
+
+.tbs-cart {
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    color: white;
+    background-color: #000000;
+    padding-top: 10px;
+    width: 250px; /* Augmenter la largeur */
+    height: 38px; /* Hauteur initiale pour le menu fermé */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+    border-radius: 10px; /* Bordures arrondies */
+    transition: height 0.5s ease; /* Transition pour l'effet de mouvement */
+}
+
+.tbs-cart-open {
+    height: 400px; /* Augmenter la hauteur pour le menu ouvert */
+}
+
+.tbs-cart-closed {
+    height: 38px;
+}
+
+.tbs-cart-toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.tbs-cart-image {
+    height: 20px;
+}
+
+.tbs-cart-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.tbs-cart-header {
+    display: flex;
+    align-items: center;
+}
+
+.tbs-cart-title {
+    font-family: "Jaini", cursive;
+    letter-spacing: 3px;
+}
+
+.tbs-cart-list {
+    list-style-type: none; /* Supprimer les puces de liste */
+    padding: 0;
+    width: 100%; /* Prendre toute la largeur disponible */
+}
+
+.tbs-cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc; /* Ajouter une bordure en bas */
+}
+
+.tbs-cart-item > span {
+    flex: 1;
+    margin-left: 8px; /* Ajouter une petite marge à gauche pour le texte */
+}
+
+.tbs-clear-button {
+    color: #000000;
+    background-color: #ededed; /* Couleur gris-clair */
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    margin-top: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Ajout de la transition pour box-shadow */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.539);
+}
+
+.tbs-delete-button {
+    background: none; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    cursor: pointer;
+    padding: 0; /* Pas de padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tbs-delete-button img.tbs-delete-icon {
+    width: 16px; /* Taille plus petite pour l'icône de suppression */
+    height: 16px; /* Taille plus petite pour l'icône de suppression */
+    margin-right: 10px; /* Pas de marge à droite */
+}
+
+.tbs-clear-button img.tbs-clear-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
+
+.tbs-clear-button:hover {
+    background-color: #c4c4c4; /* Couleur gris-foncé au survol */
+}
+
+@media (max-width: 768px) {
+    .tbs-cart {
+        right: 0; /* Ajuster à droite */
+        left: 0; /* Ajuster à gauche */
+        top: 60px; /* Garder un espace en haut */
+        width: 100%; /* Prendre toute la largeur sur mobile */
+        height: 38px; /* Hauteur initiale pour le menu fermé sur mobile */
+        border-radius: 0px; /* Bordures arrondies sur mobile */
+        transition: height 0.5s ease; /* Transition pour l'effet de mouvement */
+    }
+
+    .tbs-cart-open {
+        height: 500px; /* Hauteur pour le menu ouvert sur mobile */
+    }
+
+    .tbs-cart-closed {
+        height: 38px; /* Hauteur souhaitée pour le panier fermé sur mobile */
+    }
+}
